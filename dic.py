@@ -1,4 +1,4 @@
-#  Dictionary for the characters
+#  Dictionary for the characters and in-game items
 characters = {
     "Pablo": {
         "Items:": "shiv, uniform, spoon",
@@ -12,7 +12,7 @@ characters = {
         "Items:": "tape, uniform, shovel",
         "Description:": "Arrested for unknown reasons, she plans to dig out."
     },
-    "Big Papa": {
+    "Big Max": {
         "Items:": "police uniform, axe, baton",
         "Description:": "Police Captain, he is very un-forgiving"
     },
@@ -29,15 +29,6 @@ items = {
     "money": "can be used to buy stuff",
     "axe": "tool used for cutting trees, can be dangerous",
     "tape": "used to stick stuff together",
-}
-
-#  Dictionary for locations
-locations = {
-    "prison cell": "a standard cell were prisoners are kept",
-    "prison yard": "the outdoor yard for prisoners",
-    "heavy duty cell": "a cell given to prisoners as punishment",
-    "police office": "the police's office, prisoners not allowed here",
-    "kitchen": "where food is made and given out",
 }
 
 
