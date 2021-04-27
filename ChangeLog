@@ -17,3 +17,7 @@
 ### Made the map far more advanced and tile based
 ### Added classes for map, characters and guards
 ### Small fixes and improvements
+
+## [1.0.4] - 2021-04-27
+### Added new files to keep game organized
+### Started locations, mapmovement, and added inmate class

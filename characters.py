@@ -1,6 +1,5 @@
 #  This is a file for classes, these include character classes so far
 
-
 class Player:
     """A class to describe player"""
 
@@ -54,7 +53,7 @@ class Inmate:
 
     def describe_I(self):
         """Used to describe inmate"""
-        print(f"This inmate is name {self.name}, they are {self.gender}.")
+        print(f"This inmate is named {self.name}, they are {self.gender}.")
 
     def inventory(self):
         """Used to show what items are in inventory"""
