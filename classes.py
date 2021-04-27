@@ -39,3 +39,26 @@ class Captain(Guard):
     def status(self):
         """Shows the status of guard"""
         print("This is a max level guard.")
+
+
+class Inmate:
+    """A class modelling an inmate"""
+
+    def __init__(self, name, gender, clothes, weapon, item):
+        """Init statement"""
+        self.name = name
+        self.gender = gender
+        self.clothes = clothes
+        self.weapon = weapon
+        self.item = item
+
+    def describe_I(self):
+        """Used to describe inmate"""
+        print(f"This inmate is name {self.name}, they are {self.gender}.")
+
+    def inventory(self):
+        """Used to show what items are in inventory"""
+        print(f"{self.name.upper()}'s inventory:")
+        print(f"\tClothes: {self.clothes}")
+        print(f"\tWeapon: {self.weapon}")
+        print(f"\tItems: {self.item}")
