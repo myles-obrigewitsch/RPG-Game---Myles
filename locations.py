@@ -1,8 +1,12 @@
 import mapmovement
 import characters
+import player_name
 
 #  This creates a instance of a movement class
 movement = mapmovement.Map("")
+
+#  Global variables for quests
+getspoon = False
 
 #  Sets up input
 option = ("What would you like to do?\n")
@@ -19,26 +23,42 @@ def prisonyard():
         else:
             print("Invalid action, try again.\n")
 
-
 #  Function for the cell area
 def cell():
+    global getspoon
     """Prison cell room function"""
-    jessica = characters.Inmate("Jessica", "Female",
-        "prison clothes", "none", "broken spoon")
+    jessica = characters.Inmate("Jessica", "female",  # Instance of inmate class
+    "prison clothes", "empty", "broken spoon")
     print("\nYou are in the cell room.")
     print("You notice an inmate hiding something.")
     print("(talk)(describe inmate)(inventory inmate)")
-    while True:
+    while True:  # While loop for ingame options
         decide = input(option)
         if decide == "move":
             movement.cell()
             break
         elif decide == "describe inmate":
             print("")
-            print(jessica.describe_I())
+            jessica.describe_I()
         elif decide == "inventory inmate":
             print("")
-            print(jessica.inventory())
+            jessica.inventory()
+        elif decide == "talk":  # This will allow player to interact to Jessica
+            print("\nJessica: I am almost done digging this hole!")
+            print("Jessica: I need a new spoon from the kitchen.")
+            print(f"Jessica: Could you get me one {player_name.name}?(yes)(no)")
+            while True:  # New while loop for yes or no decision
+                yesorno = input(option)
+                if yesorno == "yes":
+                    print("\nJessica: Perfect thanks!")
+                    print("New objective: Get Jessica a spoon.")
+                    getspoon = True  # This starts the getspoon quest
+                    break
+                elif yesorno == "no":
+                    print("\nJessica: Fine, rot in prison then!")
+                    break
+                else:
+                    print("Invalid action, try again.\n")
         else:
             print("Invalid action, try again.\n")
 
@@ -47,7 +67,18 @@ def cell():
 def kitchen():
     """Kitchen function"""
     print("\nYou are in the kitchen.")
-    while True:
+    if getspoon == True:
+        print("You see there is a spoon behind the counter.")
+        print("Want to sneak and grab it, or take it and run?(sneak)(run)")
+        while True:
+            sneakorrun = input(option)
+            if sneakorrun == "run":
+                print("\nYou get caught by a guard, he tackles you.")
+                print("You are sent to max security prison!")
+                
+
+    #  Will only run if getspoon is not accepted
+    while getspoon == False:
         decide = input(option)
         if decide == "move":
             movement.kitchen()

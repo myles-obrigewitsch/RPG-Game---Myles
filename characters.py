@@ -43,9 +43,9 @@ class Captain(Guard):
 class Inmate:
     """A class modelling an inmate"""
 
-    def __init__(self, name, gender, clothes, weapon, item):
+    def __init__(self, Iname, gender, clothes, weapon, item):
         """Init statement"""
-        self.name = name
+        self.Iname = Iname
         self.gender = gender
         self.clothes = clothes
         self.weapon = weapon
@@ -53,11 +53,11 @@ class Inmate:
 
     def describe_I(self):
         """Used to describe inmate"""
-        print(f"This inmate is named {self.name}, they are {self.gender}.")
+        print(f"This inmate is named {self.Iname}, they are {self.gender}.")
 
     def inventory(self):
         """Used to show what items are in inventory"""
-        print(f"{self.name.upper()}'s inventory:")
+        print(f"{self.Iname.upper()}'s inventory:")
         print(f"\tClothes: {self.clothes}")
         print(f"\tWeapon: {self.weapon}")
         print(f"\tItems: {self.item}")
