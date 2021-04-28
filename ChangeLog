@@ -21,3 +21,8 @@
 ## [1.0.4] - 2021-04-27
 ### Added new files to keep game organized
 ### Started locations, mapmovement, and added inmate class
+### Added first quest into game
+
+## [1.0.5] - 2021-04-28
+### Added working losing screen
+### Seperated files into a more managable system
