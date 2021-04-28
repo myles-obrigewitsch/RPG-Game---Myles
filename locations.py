@@ -9,6 +9,7 @@ movement = mapmovement.Map("")
 
 #  Global variables for quests
 getspoon = False
+firstchacne = False
 firstchance = False
 haveshovel = False
 haveknife = False
