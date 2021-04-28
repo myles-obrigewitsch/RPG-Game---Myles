@@ -10,6 +10,9 @@ movement = mapmovement.Map("")
 #  Global variables for quests
 getspoon = False
 firstchance = False
+haveshovel = False
+haveknife = False
+havemoney = False
 
 #  Sets up input
 option = ("What would you like to do?\n")
@@ -17,12 +20,22 @@ option = ("What would you like to do?\n")
 #  Function for the prison yard area
 def prisonyard():
     """Prison yard function"""
+    global haveknife  # Sets up global have knife variable
     print("\nThe prison yard is grey, and lonely.")
+    print("The only thing in the courtyard is a big rock.(rock)")
     while True:
         decide = input(option)
         if decide == "move":
             movement.prison_yard()  # Goes to movement class
             break
+        elif decide == "rock":
+            if haveshovel == False:
+                print("\nYou go the rock and see a knife lodged under it.")
+                print("You could get it if you had a shovel...")
+            elif haveshovel == True:
+                print("\nYou dig up the knife, and take it with you!")
+                print("New Objective: Get money from buff inmate.")
+                haveknife = True
         else:
             print("Invalid action, try again.\n")
 
@@ -31,7 +44,8 @@ def cell():
     global getspoon
     """Prison cell room function"""
     jessica = characters.Inmate("Jessica", "female",  # Instance of inmate class
-    "prison clothes", "empty", "broken spoon")
+    "prison uniform", "empty", "broken spoon")
+    
     print("\nYou are in the cell room.")
     print("You notice an inmate hiding something.")
     print("(talk)(describe inmate)(inventory inmate)")
@@ -95,7 +109,7 @@ def kitchen():
                     movement.kitchen()
                     break
                 else:
-                    print("Invalid action, try again.")
+                    print("Invalid action, try again.\n")
                 break
                 
     #  Will only run if getspoon is not accepted
@@ -105,48 +119,77 @@ def kitchen():
             movement.kitchen()
             break
         else:
-            print("Invalid action, try again.")
+            print("Invalid action, try again.\n")
 
 
 #  Function for the gym area
 def gym():
     """Gym function"""
+    global haveshovel  # Uses global variables
+    global haveknife
+    global havemoney
+    pablo = characters.Inmate("Pablo", "Male", 
+    "prison uniform", "pure muscles", "empty")
+    
     print("\nYou are in the gym.")
+    print("You see there is a buff guy protecting money.")
+    print("You see a shovel being used as a dumbell.")
+    print("(fight)(describe enemy)(inventory enemy)(take shovel)")
     while True:
         decide = input(option)
         if decide == "move":
             movement.gym()
             break
+        elif decide == "take shovel": # Picks up shovel
+            print("\nYou picked up the shovel.")
+            print("New Objective: Dig up knife in prison yard.")
+            haveshovel = True
+        elif decide == "describe enemy":  # Calls upon inmate instance
+            print("")
+            pablo.describe_I()
+        elif decide == "inventory enemy":
+            print("")
+            pablo.inventory()
+        elif decide == "fight":  # Sets up fight, player will lose without knife
+            if haveknife == False:
+                print("\nYou go to fight him but he smacks you hard.")
+                print("Your life slowly fades away...")
+                losingscreen.lose()
+                break
+            elif haveknife == True:
+                print("\nHe sees your knife and begins to cry.")
+                print("He gives you the money he was protecting.")
+                print("New Objective: Bribe Guards.")
+                havemoney = True
         else:
-            print("Invalid action, try again.")
+            print("Invalid action, try again.\n")
 
 
 #  Guard room
 def guard_enc():
     """Guard encounter"""
-    BigMax = characters.Captain("Big Max")
-    Ricky = characters.Guard("Ricky")
+    global havemoney
+    ricky = characters.Guard("Ricky")  # Sets up guard instance
 
-    encounter = ("\nIn the guard room you see a captain and regular guard.")
-    encounter += ("\nType describe captain or describe guard for description.")
-    encounter += ("\nType status captain or status guard to check status.\n")
-    #  While loop that will allow for repeating actions
+    print("\nYou are in the guard room")
+    print("You see the corrupt guard Ricky is there.")
+    print("(describe guard)(bribe)")
     while True:
-        response = input(encounter)
-        if response == "describe captain":
+        response = input(option)
+        if response == "describe guard":
             print("")
-            BigMax.describe_g()
-        elif response == "describe guard":
-            print("")
-            Ricky.describe_g()
-        elif response == "status captain":
-            print("")
-            BigMax.status()
-        elif response == "status guard":
-            print("")
-            Ricky.status()
+            ricky.describe_g()
+        elif response == "bribe":
+            if havemoney == False:
+                print("\nRicky: You do not have any money idiot!")
+            if havemoney == True:
+                print("\nYou hand him the buff mans money.")
+                print(f"Ricky: This will suffice {player_name.name}.")
+                print("He escorts you out of prison quietly...")
+                print("YOU WIN!")
+                break
         elif response == "move":
             movement.guard_room()
             break
         else:
-            print("\nInvalid action, try again.\n")
+            print("Invalid action, try again.\n")

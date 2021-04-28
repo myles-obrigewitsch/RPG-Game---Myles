@@ -26,4 +26,4 @@ def lose():
             print("\nEnding game...")
             break
         else:
-            print("\nInvalid input, try again.")
+            print("Invalid action, try again.\n")

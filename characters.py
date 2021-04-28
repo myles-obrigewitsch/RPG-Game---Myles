@@ -57,7 +57,7 @@ class Inmate:
 
     def inventory(self):
         """Used to show what items are in inventory"""
-        print(f"{self.Iname.upper()}'s inventory:")
+        print(f"{self.Iname.upper()}'s Inventory:")
         print(f"\tClothes: {self.clothes}")
         print(f"\tWeapon: {self.weapon}")
         print(f"\tItems: {self.item}")
