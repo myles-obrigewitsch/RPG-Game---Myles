@@ -1,6 +1,7 @@
 import mapmovement
 import characters
 import player_name
+import losingscreen
 
 #  This creates a instance of a movement class
 movement = mapmovement.Map("")
@@ -67,7 +68,7 @@ def cell():
 def kitchen():
     """Kitchen function"""
     print("\nYou are in the kitchen.")
-    if getspoon == True:
+    if getspoon == True:  # Activated if quest is accepted
         print("You see there is a spoon behind the counter.")
         print("Want to sneak and grab it, or take it and run?(sneak)(run)")
         while True:
@@ -75,7 +76,7 @@ def kitchen():
             if sneakorrun == "run":
                 print("\nYou get caught by a guard, he tackles you.")
                 print("You are sent to max security prison!")
-                
+                losingscreen.lose()  # Sends player to losing screen
 
     #  Will only run if getspoon is not accepted
     while getspoon == False:
