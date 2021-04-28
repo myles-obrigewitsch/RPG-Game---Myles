@@ -2,7 +2,7 @@
 characters = {
     "Pablo": {
         "Items:": "shiv, uniform, spoon",
-        "Description:": "Arrested for gang violence, he is a good companion."
+        "Description:": "Arrested for gang violence"
     },
     "Ricky": {
         "Items:": "police uniform, baton, money",
