@@ -37,7 +37,7 @@ def prisonyard():
             elif haveshovel is True:
                 print("\nYou dig up the knife, and take it with you!")
                 print("New Objective: Get money from buff inmate.")
-                haveknife = True
+                haveknife = True  # sets global value to true
         else:
             print("Invalid action, try again.\n")
 
@@ -85,7 +85,7 @@ def cell():
 
 
 #  If you made it far enough in quest this will run
-    while firstchance is True:
+    while firstchance is True:  # Global variable
         win_or_lose.morales()
         firstchance = False
 
@@ -107,7 +107,7 @@ def kitchen():
             if sneakorrun == "sneak":
                 print("\nYou go by unnoticed, the spoon is now yours!")
                 print("New objective: Bring spoon back to Jessica.")
-                firstchance = True
+                firstchance = True  # sets global value true
                 decide = input(option)
                 if decide == "move":
                     movement.kitchen()
@@ -164,7 +164,7 @@ def gym():
                 print("\nHe sees your knife and begins to cry.")
                 print("He gives you the money he was protecting.")
                 print("New Objective: Bribe Guards.")
-                havemoney = True
+                havemoney = True  # sets money variable to true
         else:
             print("Invalid action, try again.\n")
 
@@ -184,7 +184,7 @@ def guard_enc():
             print("")
             ricky.describe_g()
         elif response == "bribe":
-            if havemoney is False:
+            if havemoney is False:  # variable to detect if you have money
                 print("\nRicky: You do not have any money idiot!")
             if havemoney is True:
                 print("\nYou hand him the buff mans money.")
