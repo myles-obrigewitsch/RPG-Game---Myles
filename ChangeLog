@@ -11,7 +11,7 @@
 
 ## [1.0.2] - 2021-04-19
 ### Added modules and maps.py + dic.py
-### Changed menu.py to Continuuous Menu.py
+### Changed menu.py to Continuous Menu.py
 
 ## [1.0.3] - 2021-04-26
 ### Made the map far more advanced and tile based
