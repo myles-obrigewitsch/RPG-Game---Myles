@@ -23,12 +23,11 @@ items = {
     "shovel": "tool used for digging",
     "uniform": "standard orange prison uniform",
     "police uniform": "uniform used by the police in game",
-    "baton": "blunt weapon often used by police",
-    "shiv": "a make-shift weapon, usually quite sharp",
+    "knife": "a weapon, usually quite sharp",
     "spoon": "cutlery used for eating",
     "money": "can be used to buy stuff",
-    "axe": "tool used for cutting trees, can be dangerous",
-    "tape": "used to stick stuff together",
+    "muscles": "pablos big muscles",
+    "broken spoon": "as the name sounds",
 }
 
 

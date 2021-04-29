@@ -1,5 +1,8 @@
+#  Import statements
 import locations
 
+
+#  This class is modelled around movement in my game
 class Map:
     """Basic map class"""
 
@@ -38,7 +41,7 @@ class Map:
                 locations.kitchen()
                 break
             else:
-                print("You cannot go that way.")
+                print("You cannot go that way.")  # Used if invalid movement
 
     def kitchen(self):
         """Sets up movement in the kitchen"""

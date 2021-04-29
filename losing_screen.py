@@ -1,6 +1,8 @@
+#  Import statements
 import player_name
 import sys
 import os
+
 
 #  Function found from internet, used to restart program
 def restart_program():

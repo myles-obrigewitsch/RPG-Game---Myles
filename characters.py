@@ -1,5 +1,7 @@
 #  This is a file for classes, these include character classes so far
 
+
+#  Player class
 class Player:
     """A class to describe player"""
 
@@ -12,6 +14,7 @@ class Player:
         print(f"Your players name is {self.name.upper()}.")
 
 
+#  Guard class
 class Guard:
     """A class modelling a guard"""
 
@@ -28,6 +31,7 @@ class Guard:
         print("This is a level 1 guard.")
 
 
+#  Subclass of guard
 class Captain(Guard):
     """Class modelling a guard captain"""
 
@@ -40,6 +44,7 @@ class Captain(Guard):
         print("This is a max level guard.")
 
 
+#  Inmate class
 class Inmate:
     """A class modelling an inmate"""
 

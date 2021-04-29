@@ -1,4 +1,6 @@
+#  Import statements
 import characters
+
 
 # Introducing global variable
 name = ""

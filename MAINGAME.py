@@ -1,5 +1,6 @@
+#  Import statements
 import locations
-import menuscreen
+import menu_screen
 from tabulate import tabulate
 
 
@@ -22,7 +23,5 @@ def start():
     locations.prisonyard()  # Sends player to prison yard function
 
 
-menuscreen.menu()  # Calls upon our menu to start the game
-start() # Calls upon start of game
-
-
+menu_screen.menu()  # Calls upon our menu to start the game
+start()  # Calls upon start of game

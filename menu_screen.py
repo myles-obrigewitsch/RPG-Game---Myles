@@ -1,11 +1,14 @@
+#  Import statements
 import player_name
 import dic
+
 
 #  Starting text for game, this code is used in the while loop
 main_menu = ("Welcome to PRISON ESCAPE!\n")
 main_menu += ("Type play to enter game, or quit to end game.\n")
 main_menu += ("To show characters type characters.\n")
 main_menu += ("To show items type items.\n")
+
 
 #  Function / while loop that runs a menu function
 def menu():
